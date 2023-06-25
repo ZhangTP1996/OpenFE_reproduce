@@ -1,6 +1,6 @@
-# Guide (for linux)
 
-### Environment Setup
+
+## Environment Setup
 
 - Install anaconda
 - ```shell
@@ -15,7 +15,7 @@
   python -m pip install -r requirements.txt --no-deps
   ```
 
-### Data Download
+## Data Download
 
 - Part 1: Kaggle data
 
@@ -42,7 +42,7 @@
   - Unzip and move the files so that there exists
     - `./data/{dataset}/*.npy`
 
-### Experiment
+## Experiment
 
 - Part 1: Kaggle experiment **(consistent with Table 5 in our paper)**
   - IEEE Experiment
@@ -74,9 +74,10 @@
     - `python baseline/run_methods.py --method fctree --data california_housing --task regression --n_new_features 10 --n_jobs 8`
     - `python eval.py --data 'california_housing' --model 'lightgbm' --model_type 'tuned' --task_type 'regression' --algorithm 'fctree' --n_saved_features 10`
 
+## Acknowledgement
+- [rtdl](https://github.com/Yura52/tabular-dl-revisiting-models): We use their codes for model training.
 
-
-## Appendix
+## Structure
 
 ```
 root:[demo]
