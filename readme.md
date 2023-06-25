@@ -70,9 +70,9 @@
         - `result` shows the test value under corresponding metric.
         - `stats.json` shows more details
   - Reproduce results of baseline methods
-    - We run FCTree on the california_housing dataset as an example. Running other methods on other datasets only require changing the arguments.
-    - `python baseline/run_methods.py --method fctree --data california_housing --task regression --n_new_features 10 --n_jobs 8`
-    - `python eval.py --data 'california_housing' --model 'lightgbm' --model_type 'tuned' --task_type 'regression' --algorithm 'fctree' --n_saved_features 10`
+    - We run SAFE on the california_housing dataset as an example. Running other methods on other datasets only require changing the arguments.
+    - `python baseline/run_methods.py --method safe --data diabetes --task classification --n_new_features 10 --n_jobs 8`
+    - `python eval.py --data diabetes --model lightgbm --model_type tuned --task_type classification --algorithm safe --n_saved_features 10`
 
 ## Acknowledgement
 - [rtdl](https://github.com/Yura52/tabular-dl-revisiting-models): We use their codes for model training.

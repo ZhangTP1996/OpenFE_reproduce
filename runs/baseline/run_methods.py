@@ -25,7 +25,7 @@ parser.add_argument('--n_jobs', type=int, default=8)
 args = parser.parse_args()
 
 def prepare_data(args):
-    path = '../../data/%s/' % args.data
+    path = './../data/%s/' % args.data
     train_x, val_x, test_x, train_c, val_c, test_c, train_y, val_y, test_y = load_data(path)
     if train_x.isnull().any().sum() != 0: 
         train_x.fillna(value=0, inplace=True)
@@ -67,7 +67,7 @@ def save_data(args, train_x:pd.DataFrame, val_x, test_x, train_y, val_y, test_y,
 if __name__ == '__main__':
     print("="*8 + args.data + ': ' + args.task)
     train_x, val_x, test_x, train_y, val_y, test_y, cat_features = prepare_data(args)
-    save_path = '../data/%s-%s-%s/' % (args.data, args.method, args.n_new_features)
+    save_path = './data/%s-%s-%s/' % (args.data, args.method, args.n_new_features)
     os.makedirs(save_path, exist_ok=True)
     info = {}
     info['args'] = vars(args) #args

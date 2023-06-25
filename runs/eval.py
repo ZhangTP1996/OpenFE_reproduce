@@ -73,6 +73,8 @@ if __name__ == '__main__':
                 open(f'output/{new_file}/{model}/{model_type}/{seed}/result','w').write('rmse: ' + str(result['metrics']['test']['rmse']))
                 logging.info(f'rmse of seed {seed}: ' + str(result['metrics']['test']['rmse']))
                 metric_list.append(result['metrics']['test']['rmse'])
+        except KeyboardInterrupt:
+            exit()
         except:
             import traceback
             logging.info(traceback.format_exc())
