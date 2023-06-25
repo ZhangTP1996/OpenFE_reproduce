@@ -4,7 +4,13 @@
 
 - Install anaconda
 - ```shell
+  export PROJECT_DIR=<ABSOLUTE path to the repository root>
   conda create -n OpenFE python=3.8.12
+  conda activate OpenFE
+  conda env config vars set PYTHONPATH=${PYTHONPATH}:${PROJECT_DIR}
+  conda env config vars set PROJECT_DIR=${PROJECT_DIR}
+  conda env config vars set LD_LIBRARY_PATH=${CONDA_PREFIX}/lib:${LD_LIBRARY_PATH}
+  conda deactivate
   conda activate OpenFE
   python -m pip install -r requirements.txt --no-deps
   ```
@@ -64,6 +70,9 @@
         - `result` shows the test value under corresponding metric.
         - `stats.json` shows more details
   - Reproduce results of baseline methods
+    - We run FCTree on the california_housing dataset as an example. Running other methods on other datasets only require changing the arguments.
+    - `python baseline/run_methods.py --method fctree --data california_housing --task regression --n_new_features 10 --n_jobs 8`
+    - `python eval.py --data 'california_housing' --model 'lightgbm' --model_type 'tuned' --task_type 'regression' --algorithm 'fctree' --n_saved_features 10`
 
 
 

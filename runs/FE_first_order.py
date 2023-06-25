@@ -18,7 +18,7 @@ parser.add_argument('--n_saved_features', type=int, default=None)
 parser.add_argument('--ordinal_threshold', type=int, default=100)
 parser.add_argument('--remain_for_stage2', type=int, default=None)
 parser.add_argument('--remain', type=int, default=2000)
-parser.add_argument('--n_jobs', type=int, default=cpu_count())
+parser.add_argument('--n_jobs', type=int, default=8)
 parser.add_argument('--is_load', action='store_true')
 warnings.filterwarnings("ignore")
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
         N_val, c_val = X_val[num_features], X_val[cat_features]
         N_test, c_test = X_test[num_features], X_test[cat_features]
 
-        file_path = f'../data/{file}-{ALGORITHM}-{args.n_saved_features}/'
+        file_path = f'./data/{file}-{ALGORITHM}-{args.n_saved_features}/'
         if TASK == 'classification':
             if y_train[y_train.columns[0]].nunique() <= 2:
                 task_type = 'binclass'

@@ -19,8 +19,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--method', type=str, required=True, choices=['autocross', 'fctree', 'safe', 'autofeat'])
 parser.add_argument('--data', type=str, required=True)
 parser.add_argument('--task', type=str, choices=['classification', 'regression'])
-parser.add_argument('--n_new_features', type=int, required=True)
-parser.add_argument('--n_jobs', type=int, default=20)
+parser.add_argument('--n_new_features', type=int, default=10)
+parser.add_argument('--n_jobs', type=int, default=8)
 
 args = parser.parse_args()
 
@@ -67,7 +67,7 @@ def save_data(args, train_x:pd.DataFrame, val_x, test_x, train_y, val_y, test_y,
 if __name__ == '__main__':
     print("="*8 + args.data + ': ' + args.task)
     train_x, val_x, test_x, train_y, val_y, test_y, cat_features = prepare_data(args)
-    save_path = '../../data/%s-%s-%s/' % (args.data, args.method, args.n_new_features)
+    save_path = '../data/%s-%s-%s/' % (args.data, args.method, args.n_new_features)
     os.makedirs(save_path, exist_ok=True)
     info = {}
     info['args'] = vars(args) #args
