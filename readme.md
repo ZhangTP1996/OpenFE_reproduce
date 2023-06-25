@@ -59,7 +59,8 @@
   - Reproduce results of OpenFE
     - Run a single dataset (e.g. california_housing)
       - `bash shell_inst/california_housing.sh`
-    - Results are in the folder `runs/output/{dataset}/lightgbm/tuned`
+    - You can find results in OpenFE-california_housing.log
+    - You can also find results in the folder `runs/output/{dataset}/lightgbm/tuned`
       - There are two files in the folder.
         - `result` shows the test value under corresponding metric.
         - `stats.json` shows more details
