@@ -1,0 +1,12 @@
+seed = 0
+
+[data]
+path = 'data/vehicleNorm'
+cat_policy = 'indices'
+
+[fit]
+early_stopping_rounds = 1999
+verbose = true
+
+[model]
+

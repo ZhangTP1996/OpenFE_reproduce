@@ -1,0 +1,66 @@
+{
+    "config": {
+        "data": {
+            "path": "data/microsoft",
+            "y_policy": "mean_std"
+        },
+        "fit": {
+            "early_stopping_rounds": 50,
+            "verbose": true
+        },
+        "model": {
+            "colsample_bytree": 0.6630691036117577,
+            "learning_rate": 0.03409718458931771,
+            "min_child_samples": 50,
+            "min_child_weight": 0.02285281560670613,
+            "n_estimators": 2000,
+            "n_jobs": 20,
+            "num_leaves": 100,
+            "reg_lambda": 0.0,
+            "subsample": 0.5851579305722739
+        },
+        "seed": 8
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "1,0,3",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "455.32.00",
+            "1": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "0": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "3": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            }
+        }
+    },
+    "dataset": "microsoft",
+    "algorithm": "lightgbm_",
+    "metrics": {
+        "train": {
+            "rmse": 0.6629120218250468,
+            "score": -0.6629120218250468
+        },
+        "val": {
+            "rmse": 0.7408162879296746,
+            "score": -0.7408162879296746
+        },
+        "test": {
+            "rmse": 0.7443261375655872,
+            "score": -0.7443261375655872
+        }
+    },
+    "time": "0:01:01"
+}

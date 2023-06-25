@@ -1,0 +1,263 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "cat_policy": "indices",
+                "normalization": "quantile",
+                "path": "data/telecom"
+            },
+            "model": {
+                "stacked": false
+            },
+            "seed": 0,
+            "training": {
+                "batch_size": 256,
+                "eval_batch_size": 8192,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16
+            }
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 50
+            },
+            "sampler": {
+                "seed": 0
+            },
+            "space": {
+                "model": {
+                    "cross_dropout": [
+                        "?uniform",
+                        0.0,
+                        0.0,
+                        0.5
+                    ],
+                    "d": [
+                        "int",
+                        64,
+                        512
+                    ],
+                    "d_embedding": [
+                        "int",
+                        64,
+                        512
+                    ],
+                    "hidden_dropout": [
+                        "uniform",
+                        0.0,
+                        0.5
+                    ],
+                    "n_cross_layers": [
+                        "int",
+                        1,
+                        8
+                    ],
+                    "n_hidden_layers": [
+                        "int",
+                        1,
+                        8
+                    ]
+                },
+                "training": {
+                    "lr": [
+                        "loguniform",
+                        1e-05,
+                        0.01
+                    ],
+                    "weight_decay": [
+                        "?loguniform",
+                        0.0,
+                        1e-06,
+                        0.001
+                    ]
+                }
+            }
+        },
+        "program": "bin/dcn2.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0,1,2,3",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "440.118.02",
+            "0": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "1": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "2": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "3": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            }
+        }
+    },
+    "best_stats": {
+        "dataset": "telecom",
+        "algorithm": "dcn2",
+        "config": {
+            "data": {
+                "cat_policy": "indices",
+                "normalization": "quantile",
+                "path": "data/telecom"
+            },
+            "model": {
+                "cross_dropout": 0.0,
+                "d": 494,
+                "d_embedding": 84,
+                "hidden_dropout": 0.03909797830988217,
+                "n_cross_layers": 6,
+                "n_hidden_layers": 6,
+                "stacked": false
+            },
+            "seed": 0,
+            "training": {
+                "batch_size": 256,
+                "eval_batch_size": 8192,
+                "lr": 0.0001084375526635981,
+                "n_epochs": 1000000000,
+                "optimizer": "adamw",
+                "patience": 16,
+                "weight_decay": 4.282188646311767e-06
+            }
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "0,1,2,3",
+                "torch.version.cuda": "10.2",
+                "torch.backends.cudnn.version()": 7605,
+                "torch.cuda.nccl.version()": [
+                    2,
+                    10,
+                    3
+                ],
+                "driver": "440.118.02",
+                "0": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                },
+                "1": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                },
+                "2": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                },
+                "3": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                }
+            }
+        },
+        "epoch_size": 128,
+        "n_parameters": 3931985,
+        "best_epoch": 11,
+        "metrics": {
+            "train": {
+                "0": {
+                    "precision": 0.7391459536634435,
+                    "recall": 0.9758803872847228,
+                    "f1-score": 0.8411742983751846,
+                    "support": 23342
+                },
+                "1": {
+                    "precision": 0.6958400864397623,
+                    "recall": 0.1380937064436582,
+                    "f1-score": 0.23045267489711935,
+                    "support": 9327
+                },
+                "accuracy": 0.7366922770822493,
+                "macro avg": {
+                    "precision": 0.7174930200516029,
+                    "recall": 0.5569870468641905,
+                    "f1-score": 0.535813486636152,
+                    "support": 32669
+                },
+                "weighted avg": {
+                    "precision": 0.7267821279082849,
+                    "recall": 0.7366922770822493,
+                    "f1-score": 0.6668132655250847,
+                    "support": 32669
+                },
+                "roc_auc": 0.7265000601669644,
+                "score": 0.7366922770822493
+            },
+            "val": {
+                "0": {
+                    "precision": 0.7218919617472215,
+                    "recall": 0.968278731149246,
+                    "f1-score": 0.8271266750573776,
+                    "support": 5769
+                },
+                "1": {
+                    "precision": 0.5744186046511628,
+                    "recall": 0.10295956648603585,
+                    "f1-score": 0.1746200070696359,
+                    "support": 2399
+                },
+                "accuracy": 0.714128305582762,
+                "macro avg": {
+                    "precision": 0.6481552831991921,
+                    "recall": 0.5356191488176409,
+                    "f1-score": 0.5008733410635068,
+                    "support": 8168
+                },
+                "weighted avg": {
+                    "precision": 0.6785779823552719,
+                    "recall": 0.714128305582762,
+                    "f1-score": 0.6354808013425646,
+                    "support": 8168
+                },
+                "roc_auc": 0.657658500309722,
+                "score": 0.714128305582762
+            },
+            "test": {
+                "0": {
+                    "precision": 0.7212233932630708,
+                    "recall": 0.9660899653979239,
+                    "f1-score": 0.825888895462344,
+                    "support": 7225
+                },
+                "1": {
+                    "precision": 0.5394736842105263,
+                    "recall": 0.09614740368509213,
+                    "f1-score": 0.16320727893090703,
+                    "support": 2985
+                },
+                "accuracy": 0.7117531831537708,
+                "macro avg": {
+                    "precision": 0.6303485387367986,
+                    "recall": 0.531118684541508,
+                    "f1-score": 0.4945480871966255,
+                    "support": 10210
+                },
+                "weighted avg": {
+                    "precision": 0.6680869699994229,
+                    "recall": 0.7117531831537708,
+                    "f1-score": 0.6321470124705381,
+                    "support": 10210
+                },
+                "roc_auc": 0.6561250543374311,
+                "score": 0.7117531831537708
+            }
+        },
+        "time": "0:00:41",
+        "trial_id": 32,
+        "tuning_time": "0:31:42"
+    },
+    "time": "0:45:21"
+}

@@ -1,0 +1,21 @@
+seed = 6
+
+[data]
+cat_policy = 'indices'
+path = 'data/diabetes'
+y_policy = 'mean_std'
+
+[fit]
+early_stopping_rounds = 50
+verbose = true
+
+[model]
+colsample_bytree = 0.5130428674839884
+learning_rate = 0.01062543325750261
+min_child_samples = 85
+min_child_weight = 0.004890204977307022
+n_estimators = 2000
+n_jobs = 20
+num_leaves = 91
+reg_lambda = 0.0
+subsample = 0.7783051627297967

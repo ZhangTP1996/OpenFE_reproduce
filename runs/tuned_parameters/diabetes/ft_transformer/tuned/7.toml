@@ -1,0 +1,26 @@
+seed = 7
+
+[data]
+normalization = 'quantile'
+path = 'data/diabetes'
+
+[model]
+activation = 'reglu'
+attention_dropout = 0.1438936562150713
+d_ffn_factor = 1.440042303813482
+d_token = 240
+ffn_dropout = 0.008886736172798129
+initialization = 'kaiming'
+n_heads = 8
+n_layers = 3
+prenormalization = true
+residual_dropout = 0.02689855920626202
+
+[training]
+batch_size = 512
+eval_batch_size = 8192
+lr = 3.016356975543347e-05
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 1.767979803602082e-05

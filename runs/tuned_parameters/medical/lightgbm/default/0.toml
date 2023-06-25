@@ -1,0 +1,13 @@
+seed = 0
+
+[data]
+path = 'data/medical'
+cat_policy = 'indices'
+y_policy = 'mean_std'
+
+[fit]
+early_stopping_rounds = 1999
+verbose = true
+
+[model]
+n_estimators = 2000

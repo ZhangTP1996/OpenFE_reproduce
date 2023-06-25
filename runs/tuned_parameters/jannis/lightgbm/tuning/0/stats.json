@@ -1,0 +1,248 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/jannis",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "n_estimators": 2000,
+                "n_jobs": 20
+            },
+            "seed": 0
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 100
+            },
+            "sampler": {
+                "seed": 0
+            },
+            "space": {
+                "model": {
+                    "colsample_bytree": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ],
+                    "learning_rate": [
+                        "loguniform",
+                        0.001,
+                        1.0
+                    ],
+                    "min_child_samples": [
+                        "int",
+                        2,
+                        100
+                    ],
+                    "min_child_weight": [
+                        "loguniform",
+                        1e-05,
+                        0.1
+                    ],
+                    "num_leaves": [
+                        "int",
+                        10,
+                        100
+                    ],
+                    "reg_lambda": [
+                        "?loguniform",
+                        0.0,
+                        1e-05,
+                        1.0
+                    ],
+                    "subsample": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ]
+                }
+            }
+        },
+        "program": "bin/lightgbm_.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": null,
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "455.32.00"
+        }
+    },
+    "best_stats": {
+        "config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/jannis",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "colsample_bytree": 0.57244265267845,
+                "learning_rate": 0.0205534155481011,
+                "min_child_samples": 45,
+                "min_child_weight": 1.573199523319862e-05,
+                "n_estimators": 2000,
+                "n_jobs": 20,
+                "num_leaves": 96,
+                "reg_lambda": 0.0,
+                "subsample": 0.6460295916225417
+            },
+            "seed": 0
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": null,
+                "torch.version.cuda": "10.2",
+                "torch.backends.cudnn.version()": 7605,
+                "torch.cuda.nccl.version()": [
+                    2,
+                    10,
+                    3
+                ],
+                "driver": "455.32.00"
+            }
+        },
+        "dataset": "jannis",
+        "algorithm": "lightgbm_",
+        "metrics": {
+            "train": {
+                "0": {
+                    "precision": 1.0,
+                    "recall": 0.9981481481481481,
+                    "f1-score": 0.9990732159406859,
+                    "support": 1080
+                },
+                "1": {
+                    "precision": 0.8237612316746361,
+                    "recall": 0.8508548168249661,
+                    "f1-score": 0.8370888509184109,
+                    "support": 18425
+                },
+                "2": {
+                    "precision": 0.8721633025430494,
+                    "recall": 0.8110286320254507,
+                    "f1-score": 0.8404857409747788,
+                    "support": 9430
+                },
+                "3": {
+                    "precision": 0.9017401861594496,
+                    "recall": 0.9038250922808583,
+                    "f1-score": 0.9027814354881186,
+                    "support": 24653
+                },
+                "accuracy": 0.8711838471299544,
+                "macro avg": {
+                    "precision": 0.8994161800942837,
+                    "recall": 0.8909641723198559,
+                    "f1-score": 0.8948573108304985,
+                    "support": 53588
+                },
+                "weighted avg": {
+                    "precision": 0.87170451306216,
+                    "recall": 0.8711838471299544,
+                    "f1-score": 0.8711728823219455,
+                    "support": 53588
+                },
+                "score": 0.8711838471299544
+            },
+            "val": {
+                "0": {
+                    "precision": 0.5555555555555556,
+                    "recall": 0.018518518518518517,
+                    "f1-score": 0.035842293906810034,
+                    "support": 270
+                },
+                "1": {
+                    "precision": 0.6285944098129902,
+                    "recall": 0.678532667679618,
+                    "f1-score": 0.6526096033402922,
+                    "support": 4607
+                },
+                "2": {
+                    "precision": 0.7223809523809523,
+                    "recall": 0.6436147645311837,
+                    "f1-score": 0.6807269463764863,
+                    "support": 2357
+                },
+                "3": {
+                    "precision": 0.8065231158961368,
+                    "recall": 0.8264114211550941,
+                    "f1-score": 0.8163461538461538,
+                    "support": 6164
+                },
+                "accuracy": 0.7271234512613823,
+                "macro avg": {
+                    "precision": 0.6782635084114087,
+                    "recall": 0.5417693429711036,
+                    "f1-score": 0.5463812493674356,
+                    "support": 13398
+                },
+                "weighted avg": {
+                    "precision": 0.7254810297920687,
+                    "recall": 0.7271234512613823,
+                    "f1-score": 0.7204568567592652,
+                    "support": 13398
+                },
+                "score": 0.7271234512613823
+            },
+            "test": {
+                "0": {
+                    "precision": 0.38461538461538464,
+                    "recall": 0.01483679525222552,
+                    "f1-score": 0.028571428571428574,
+                    "support": 337
+                },
+                "1": {
+                    "precision": 0.6271866474081207,
+                    "recall": 0.6787078846821814,
+                    "f1-score": 0.6519309366919678,
+                    "support": 5758
+                },
+                "2": {
+                    "precision": 0.7142312094620374,
+                    "recall": 0.6352222599253479,
+                    "f1-score": 0.6724137931034483,
+                    "support": 2947
+                },
+                "3": {
+                    "precision": 0.8042375031717838,
+                    "recall": 0.8227125243348475,
+                    "f1-score": 0.8133701161224096,
+                    "support": 7705
+                },
+                "accuracy": 0.7239505583089508,
+                "macro avg": {
+                    "precision": 0.6325676861643317,
+                    "recall": 0.5378698660486506,
+                    "f1-score": 0.5415715686223135,
+                    "support": 16747
+                },
+                "weighted avg": {
+                    "precision": 0.7190807569483825,
+                    "recall": 0.7239505583089508,
+                    "f1-score": 0.7172667998984863,
+                    "support": 16747
+                },
+                "score": 0.7239505583089508
+            }
+        },
+        "time": "0:00:17",
+        "trial_id": 58,
+        "tuning_time": "0:13:54"
+    },
+    "time": "0:24:48"
+}

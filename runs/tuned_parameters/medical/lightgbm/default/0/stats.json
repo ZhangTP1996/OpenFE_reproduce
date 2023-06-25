@@ -1,0 +1,55 @@
+{
+    "config": {
+        "data": {
+            "cat_policy": "indices",
+            "path": "data/medical",
+            "y_policy": "mean_std"
+        },
+        "fit": {
+            "early_stopping_rounds": 1999,
+            "verbose": true
+        },
+        "model": {
+            "n_estimators": 2000
+        },
+        "seed": 0
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "2,3",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "440.118.02",
+            "2": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "3": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            }
+        }
+    },
+    "dataset": "medical",
+    "algorithm": "lightgbm_",
+    "metrics": {
+        "train": {
+            "rmse": 323.41578171827274,
+            "score": -323.41578171827274
+        },
+        "val": {
+            "rmse": 1179.9424193138555,
+            "score": -1179.9424193138555
+        },
+        "test": {
+            "rmse": 1134.4323081876692,
+            "score": -1134.4323081876692
+        }
+    },
+    "time": "0:00:14"
+}

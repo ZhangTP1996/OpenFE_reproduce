@@ -1,0 +1,24 @@
+seed = 0
+
+[data]
+cat_policy = 'indices'
+normalization = 'quantile'
+path = 'data/telecom'
+
+[model]
+cross_dropout = 0.0
+d = 494
+d_embedding = 84
+hidden_dropout = 0.03909797830988217
+n_cross_layers = 6
+n_hidden_layers = 6
+stacked = false
+
+[training]
+batch_size = 256
+eval_batch_size = 8192
+lr = 0.0001084375526635981
+n_epochs = 1000000000
+optimizer = 'adamw'
+patience = 16
+weight_decay = 4.282188646311767e-06

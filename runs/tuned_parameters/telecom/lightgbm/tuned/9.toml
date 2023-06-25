@@ -1,0 +1,21 @@
+seed = 9
+
+[data]
+cat_policy = 'indices'
+path = 'data/telecom'
+y_policy = 'mean_std'
+
+[fit]
+early_stopping_rounds = 50
+verbose = true
+
+[model]
+colsample_bytree = 0.5257201246249155
+learning_rate = 0.02697313064216779
+min_child_samples = 74
+min_child_weight = 1.102605078615191e-05
+n_estimators = 2000
+n_jobs = 1
+num_leaves = 83
+reg_lambda = 0.0
+subsample = 0.7760549229690422

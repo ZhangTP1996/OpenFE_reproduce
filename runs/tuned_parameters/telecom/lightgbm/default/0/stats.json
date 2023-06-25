@@ -1,0 +1,37 @@
+{
+    "config": {
+        "data": {
+            "cat_policy": "indices",
+            "path": "data/telecom"
+        },
+        "fit": {
+            "early_stopping_rounds": 1999,
+            "verbose": true
+        },
+        "model": {
+            "n_estimators": 2000
+        },
+        "seed": 0
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "2,3",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "440.118.02",
+            "2": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "3": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            }
+        }
+    }
+}

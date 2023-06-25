@@ -1,0 +1,165 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "path": "data/medical",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "n_estimators": 2000,
+                "n_jobs": 1
+            },
+            "seed": 0
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 100
+            },
+            "sampler": {
+                "seed": 0
+            },
+            "space": {
+                "model": {
+                    "colsample_bytree": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ],
+                    "learning_rate": [
+                        "loguniform",
+                        0.001,
+                        1.0
+                    ],
+                    "min_child_samples": [
+                        "int",
+                        2,
+                        100
+                    ],
+                    "min_child_weight": [
+                        "loguniform",
+                        1e-05,
+                        0.1
+                    ],
+                    "num_leaves": [
+                        "int",
+                        10,
+                        100
+                    ],
+                    "reg_lambda": [
+                        "?loguniform",
+                        0.0,
+                        1e-05,
+                        1.0
+                    ],
+                    "subsample": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ]
+                }
+            }
+        },
+        "program": "bin/lightgbm_.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0,1,2",
+            "torch.version.cuda": "10.2",
+            "torch.backends.cudnn.version()": 7605,
+            "torch.cuda.nccl.version()": [
+                2,
+                10,
+                3
+            ],
+            "driver": "440.118.02",
+            "0": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "1": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            },
+            "2": {
+                "name": "Tesla P40",
+                "total_memory": 24032378880
+            }
+        }
+    },
+    "continuations": [
+        16
+    ],
+    "best_stats": {
+        "config": {
+            "data": {
+                "path": "data/medical",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "colsample_bytree": 0.5797774461035404,
+                "learning_rate": 0.01382326571792293,
+                "min_child_samples": 98,
+                "min_child_weight": 0.0004907863716984355,
+                "n_estimators": 2000,
+                "n_jobs": 1,
+                "num_leaves": 40,
+                "reg_lambda": 0.0003157693074141647,
+                "subsample": 0.5283040407458859
+            },
+            "seed": 0
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "0,1,2",
+                "torch.version.cuda": "10.2",
+                "torch.backends.cudnn.version()": 7605,
+                "torch.cuda.nccl.version()": [
+                    2,
+                    10,
+                    3
+                ],
+                "driver": "440.118.02",
+                "0": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                },
+                "1": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                },
+                "2": {
+                    "name": "Tesla P40",
+                    "total_memory": 24032378880
+                }
+            }
+        },
+        "dataset": "medical",
+        "algorithm": "lightgbm_",
+        "metrics": {
+            "train": {
+                "rmse": 712.6937336094107,
+                "score": -712.6937336094107
+            },
+            "val": {
+                "rmse": 1153.3460139842712,
+                "score": -1153.3460139842712
+            },
+            "test": {
+                "rmse": 1128.4121764224456,
+                "score": -1128.4121764224456
+            }
+        },
+        "time": "0:01:53",
+        "trial_id": 81,
+        "tuning_time": "2:16:29"
+    },
+    "time": "2:33:34"
+}

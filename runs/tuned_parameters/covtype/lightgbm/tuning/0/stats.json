@@ -1,0 +1,326 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/covtype",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "n_estimators": 2000,
+                "n_jobs": 20
+            },
+            "seed": 0
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 100
+            },
+            "sampler": {
+                "seed": 0
+            },
+            "space": {
+                "model": {
+                    "colsample_bytree": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ],
+                    "learning_rate": [
+                        "loguniform",
+                        0.001,
+                        1.0
+                    ],
+                    "min_child_samples": [
+                        "int",
+                        2,
+                        100
+                    ],
+                    "min_child_weight": [
+                        "loguniform",
+                        1e-05,
+                        0.1
+                    ],
+                    "num_leaves": [
+                        "int",
+                        10,
+                        100
+                    ],
+                    "reg_lambda": [
+                        "?loguniform",
+                        0.0,
+                        1e-05,
+                        1.0
+                    ],
+                    "subsample": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ]
+                }
+            }
+        },
+        "program": "bin/lightgbm_.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "0,1,2,3",
+            "torch.version.cuda": "10.1",
+            "torch.backends.cudnn.version()": 7603,
+            "torch.cuda.nccl.version()": 2708,
+            "driver": "455.32.00",
+            "0": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "1": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "2": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "3": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            }
+        }
+    },
+    "best_stats": {
+        "config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/covtype",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "colsample_bytree": 0.9259100580938232,
+                "learning_rate": 0.07940858605663946,
+                "min_child_samples": 16,
+                "min_child_weight": 0.03503696211434491,
+                "n_estimators": 2000,
+                "n_jobs": 20,
+                "num_leaves": 94,
+                "reg_lambda": 0.002949428929598693,
+                "subsample": 0.792700425467908
+            },
+            "seed": 0
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "0,1,2,3",
+                "torch.version.cuda": "10.1",
+                "torch.backends.cudnn.version()": 7603,
+                "torch.cuda.nccl.version()": 2708,
+                "driver": "455.32.00",
+                "0": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                },
+                "1": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                },
+                "2": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                },
+                "3": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                }
+            }
+        },
+        "dataset": "covtype",
+        "algorithm": "lightgbm_",
+        "metrics": {
+            "train": {
+                "0": {
+                    "precision": 1.0,
+                    "recall": 0.99997787251619,
+                    "f1-score": 0.9999889361356873,
+                    "support": 135578
+                },
+                "1": {
+                    "precision": 0.9999834542095248,
+                    "recall": 1.0,
+                    "f1-score": 0.999991727036321,
+                    "support": 181312
+                },
+                "2": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 22882
+                },
+                "3": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 1759
+                },
+                "4": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 6075
+                },
+                "5": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 11115
+                },
+                "6": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 13126
+                },
+                "accuracy": 0.9999919321656487,
+                "macro avg": {
+                    "precision": 0.9999976363156465,
+                    "recall": 0.9999968389308843,
+                    "f1-score": 0.9999972375960012,
+                    "support": 371847
+                },
+                "weighted avg": {
+                    "precision": 0.9999919322991375,
+                    "recall": 0.9999919321656487,
+                    "f1-score": 0.9999919321543905,
+                    "support": 371847
+                },
+                "score": 0.9999919321656487
+            },
+            "val": {
+                "0": {
+                    "precision": 0.9746507402222157,
+                    "recall": 0.9653626010503334,
+                    "f1-score": 0.9699844363744164,
+                    "support": 33894
+                },
+                "1": {
+                    "precision": 0.9699849269283701,
+                    "recall": 0.9795931874338157,
+                    "f1-score": 0.9747653806047967,
+                    "support": 45328
+                },
+                "2": {
+                    "precision": 0.9632008331886825,
+                    "recall": 0.9699353259919594,
+                    "f1-score": 0.9665563490681066,
+                    "support": 5721
+                },
+                "3": {
+                    "precision": 0.9002433090024331,
+                    "recall": 0.8428246013667426,
+                    "f1-score": 0.8705882352941177,
+                    "support": 439
+                },
+                "4": {
+                    "precision": 0.9305555555555556,
+                    "recall": 0.8821593153390388,
+                    "f1-score": 0.9057113889827645,
+                    "support": 1519
+                },
+                "5": {
+                    "precision": 0.9531420268797676,
+                    "recall": 0.9442245412018712,
+                    "f1-score": 0.9486623282718728,
+                    "support": 2779
+                },
+                "6": {
+                    "precision": 0.976915974145891,
+                    "recall": 0.9670932358318098,
+                    "f1-score": 0.971979788700046,
+                    "support": 3282
+                },
+                "accuracy": 0.970073793593081,
+                "macro avg": {
+                    "precision": 0.9526704808461307,
+                    "recall": 0.9358846868879388,
+                    "f1-score": 0.9440354153280172,
+                    "support": 92962
+                },
+                "weighted avg": {
+                    "precision": 0.970036160419957,
+                    "recall": 0.970073793593081,
+                    "f1-score": 0.9700180788223937,
+                    "support": 92962
+                },
+                "score": 0.970073793593081
+            },
+            "test": {
+                "0": {
+                    "precision": 0.9741953913540278,
+                    "recall": 0.9659176737160121,
+                    "f1-score": 0.9700388736133497,
+                    "support": 42368
+                },
+                "1": {
+                    "precision": 0.9696313122488206,
+                    "recall": 0.9793685250878029,
+                    "f1-score": 0.9744755950865301,
+                    "support": 56661
+                },
+                "2": {
+                    "precision": 0.9634519177320734,
+                    "recall": 0.9695147531813733,
+                    "f1-score": 0.9664738272809648,
+                    "support": 7151
+                },
+                "3": {
+                    "precision": 0.9015444015444015,
+                    "recall": 0.8506375227686703,
+                    "f1-score": 0.8753514526710403,
+                    "support": 549
+                },
+                "4": {
+                    "precision": 0.9308176100628931,
+                    "recall": 0.8572933122696156,
+                    "f1-score": 0.8925438596491229,
+                    "support": 1899
+                },
+                "5": {
+                    "precision": 0.947521020585677,
+                    "recall": 0.9409732219982724,
+                    "f1-score": 0.944235770008668,
+                    "support": 3473
+                },
+                "6": {
+                    "precision": 0.9768073032321737,
+                    "recall": 0.9651389566065334,
+                    "f1-score": 0.9709380748007357,
+                    "support": 4102
+                },
+                "accuracy": 0.9696049155357435,
+                "macro avg": {
+                    "precision": 0.9519955652514381,
+                    "recall": 0.9326919950897542,
+                    "f1-score": 0.9420082075872018,
+                    "support": 116203
+                },
+                "weighted avg": {
+                    "precision": 0.9695516412504811,
+                    "recall": 0.9696049155357435,
+                    "f1-score": 0.9695296212524399,
+                    "support": 116203
+                },
+                "score": 0.9696049155357435
+            }
+        },
+        "time": "0:03:42",
+        "trial_id": 45,
+        "tuning_time": "1:54:23"
+    },
+    "time": "4:20:05"
+}

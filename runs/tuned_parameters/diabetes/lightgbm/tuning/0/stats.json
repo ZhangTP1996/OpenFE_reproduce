@@ -1,0 +1,223 @@
+{
+    "config": {
+        "base_config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/diabetes",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "n_estimators": 2000,
+                "n_jobs": 20
+            },
+            "seed": 0
+        },
+        "optimization": {
+            "options": {
+                "n_trials": 100
+            },
+            "sampler": {
+                "seed": 0
+            },
+            "space": {
+                "model": {
+                    "colsample_bytree": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ],
+                    "learning_rate": [
+                        "loguniform",
+                        0.001,
+                        1.0
+                    ],
+                    "min_child_samples": [
+                        "int",
+                        2,
+                        100
+                    ],
+                    "min_child_weight": [
+                        "loguniform",
+                        1e-05,
+                        0.1
+                    ],
+                    "num_leaves": [
+                        "int",
+                        10,
+                        100
+                    ],
+                    "reg_lambda": [
+                        "?loguniform",
+                        0.0,
+                        1e-05,
+                        1.0
+                    ],
+                    "subsample": [
+                        "uniform",
+                        0.5,
+                        1.0
+                    ]
+                }
+            }
+        },
+        "program": "bin/lightgbm_.py"
+    },
+    "environment": {
+        "devices": {
+            "CUDA_VISIBLE_DEVICES": "2,3",
+            "torch.version.cuda": "10.1",
+            "torch.backends.cudnn.version()": 7603,
+            "torch.cuda.nccl.version()": 2708,
+            "driver": "455.32.00",
+            "2": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            },
+            "3": {
+                "name": "Tesla V100-PCIE-16GB",
+                "total_memory": 16945512448
+            }
+        }
+    },
+    "best_stats": {
+        "config": {
+            "data": {
+                "cat_policy": "indices",
+                "path": "data/diabetes",
+                "y_policy": "mean_std"
+            },
+            "fit": {
+                "early_stopping_rounds": 50,
+                "verbose": true
+            },
+            "model": {
+                "colsample_bytree": 0.5130428674839884,
+                "learning_rate": 0.01062543325750261,
+                "min_child_samples": 85,
+                "min_child_weight": 0.004890204977307022,
+                "n_estimators": 2000,
+                "n_jobs": 20,
+                "num_leaves": 91,
+                "reg_lambda": 0.0,
+                "subsample": 0.7783051627297967
+            },
+            "seed": 0
+        },
+        "environment": {
+            "devices": {
+                "CUDA_VISIBLE_DEVICES": "2,3",
+                "torch.version.cuda": "10.1",
+                "torch.backends.cudnn.version()": 7603,
+                "torch.cuda.nccl.version()": 2708,
+                "driver": "455.32.00",
+                "2": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                },
+                "3": {
+                    "name": "Tesla V100-PCIE-16GB",
+                    "total_memory": 16945512448
+                }
+            }
+        },
+        "dataset": "diabetes",
+        "algorithm": "lightgbm_",
+        "metrics": {
+            "train": {
+                "0": {
+                    "precision": 0.7398908558498603,
+                    "recall": 0.7919646673315287,
+                    "f1-score": 0.7650426644646297,
+                    "support": 35095
+                },
+                "1": {
+                    "precision": 0.735125526048469,
+                    "recall": 0.674668708796697,
+                    "f1-score": 0.7036008194728983,
+                    "support": 30034
+                },
+                "accuracy": 0.7378740653165257,
+                "macro avg": {
+                    "precision": 0.7375081909491646,
+                    "recall": 0.7333166880641129,
+                    "f1-score": 0.734321741968764,
+                    "support": 65129
+                },
+                "weighted avg": {
+                    "precision": 0.737693341451436,
+                    "recall": 0.7378740653165257,
+                    "f1-score": 0.7367089825029589,
+                    "support": 65129
+                },
+                "roc_auc": 0.8155692722394317,
+                "score": 0.8155692722394317
+            },
+            "val": {
+                "0": {
+                    "precision": 0.6772380144251167,
+                    "recall": 0.731721292688517,
+                    "f1-score": 0.7034262421504902,
+                    "support": 8726
+                },
+                "1": {
+                    "precision": 0.6584974471188914,
+                    "recall": 0.5973269816064576,
+                    "f1-score": 0.6264224257563141,
+                    "support": 7557
+                },
+                "accuracy": 0.6693484001719585,
+                "macro avg": {
+                    "precision": 0.667867730772004,
+                    "recall": 0.6645241371474873,
+                    "f1-score": 0.6649243339534021,
+                    "support": 16283
+                },
+                "weighted avg": {
+                    "precision": 0.6685404484278714,
+                    "recall": 0.6693484001719585,
+                    "f1-score": 0.6676884886351191,
+                    "support": 16283
+                },
+                "roc_auc": 0.7327865105024565,
+                "score": 0.7327865105024565
+            },
+            "test": {
+                "0": {
+                    "precision": 0.6822515891602543,
+                    "recall": 0.7386579733767998,
+                    "f1-score": 0.7093351884864559,
+                    "support": 11043
+                },
+                "1": {
+                    "precision": 0.6563467492260062,
+                    "recall": 0.5919879712168403,
+                    "f1-score": 0.6225083290981986,
+                    "support": 9311
+                },
+                "accuracy": 0.671563329075366,
+                "macro avg": {
+                    "precision": 0.6692991691931303,
+                    "recall": 0.6653229722968201,
+                    "f1-score": 0.6659217587923273,
+                    "support": 20354
+                },
+                "weighted avg": {
+                    "precision": 0.6704013403331056,
+                    "recall": 0.671563329075366,
+                    "f1-score": 0.6696159741912774,
+                    "support": 20354
+                },
+                "roc_auc": 0.7327097645350447,
+                "score": 0.7327097645350447
+            }
+        },
+        "time": "0:00:13",
+        "trial_id": 89,
+        "tuning_time": "0:30:37"
+    },
+    "time": "0:33:30"
+}

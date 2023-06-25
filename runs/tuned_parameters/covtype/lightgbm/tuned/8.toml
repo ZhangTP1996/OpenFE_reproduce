@@ -1,0 +1,21 @@
+seed = 8
+
+[data]
+cat_policy = 'indices'
+path = 'data/covtype'
+y_policy = 'mean_std'
+
+[fit]
+early_stopping_rounds = 50
+verbose = true
+
+[model]
+colsample_bytree = 0.9259100580938232
+learning_rate = 0.07940858605663946
+min_child_samples = 16
+min_child_weight = 0.03503696211434491
+n_estimators = 2000
+n_jobs = 20
+num_leaves = 94
+reg_lambda = 0.002949428929598693
+subsample = 0.792700425467908
