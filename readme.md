@@ -44,7 +44,7 @@
 
 ## Experiment
 
-- Part 1: Kaggle experiment **(consistent with Table 5 in our paper)**
+- Part 1: Kaggle experiment **(Table 5 in our paper)**
   - IEEE Experiment
     - Make sure you are in the folder `run_IEEE`.
     - `bash IEEE.sh`
@@ -55,7 +55,7 @@
     - `bash BNP.sh`
     - Outputs are in the folder `run_BNP/result/`. To evaluate them, submit them to the link below.
     - Submit link: [BNP Paribas Cardif Claims Management | Kaggle](https://www.kaggle.com/competitions/bnp-paribas-cardif-claims-management/submit)
-- Part 2: other experiment **(consistent with Table 3 in our paper)**
+- Part 2: other experiment **(Table 3 in our paper)**
 
 [//]: # (  - Run all of them)
 
