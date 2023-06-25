@@ -38,7 +38,7 @@
       - `./data/BNP/sample_submission.csv.zip`
 
 - Part 2: other data
-  - Download link: https://www.dropbox.com/s/8tj5ln7wz1r9arc/data.zip?dl=0
+  - Download link: https://www.dropbox.com/s/8tj5ln7wz1r9arc/data.zip?dl=1
   - Unzip and move the files so that there exists
     - `./data/{dataset}/*.npy`
 
@@ -56,12 +56,6 @@
     - Outputs are in the folder `run_BNP/result/`. To evaluate them, submit them to the link below.
     - Submit link: [BNP Paribas Cardif Claims Management | Kaggle](https://www.kaggle.com/competitions/bnp-paribas-cardif-claims-management/submit)
 - Part 2: other experiment **(Table 3 in our paper)**
-
-[//]: # (  - Run all of them)
-
-[//]: # (    - In the folder `runs`.)
-
-[//]: # (    - `python3 run_all.py`)
   - Reproduce results of OpenFE
     - Run a single dataset (e.g. california_housing)
       - `bash shell_inst/california_housing.sh`
