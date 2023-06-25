@@ -55,7 +55,7 @@
     - `bash BNP.sh`
     - Outputs are in the folder `run_BNP/result/`. To evaluate them, submit them to the link below.
     - Submit link: [BNP Paribas Cardif Claims Management | Kaggle](https://www.kaggle.com/competitions/bnp-paribas-cardif-claims-management/submit)
-- Part 2: other experiment **(Table 3 in our paper)**
+- Part 2: other experiments **(Table 3 in our paper)**
   - Reproduce results of OpenFE
     - Run a single dataset (e.g. california_housing)
       - `bash shell_inst/california_housing.sh`
@@ -65,7 +65,7 @@
         - `result` shows the test value under corresponding metric.
         - `stats.json` shows more details
   - Reproduce results of baseline methods
-    - We run SAFE on the california_housing dataset as an example. Running other methods on other datasets only require changing the arguments.
+    - We run SAFE on the Diabetes dataset as an example. Running other methods on other datasets only require changing the arguments.
     - `python baseline/run_methods.py --method safe --data diabetes --task classification --n_new_features 10 --n_jobs 8`
     - `python eval.py --data diabetes --model lightgbm --model_type tuned --task_type classification --algorithm safe --n_saved_features 10`
 
